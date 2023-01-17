@@ -1,0 +1,4 @@
+classify.o: ../djvulibre/tools/jb2cmp/classify.cpp ../djvulibre/tools/jb2cmp/mdjvucfg.h ../djvulibre/tools/jb2cmp/minidjvu.h ../djvulibre/tools/jb2cmp/patterns.h ../djvulibre/tools/jb2cmp/classify.h
+cuts.o: ../djvulibre/tools/jb2cmp/cuts.cpp ../djvulibre/tools/jb2cmp/mdjvucfg.h ../djvulibre/tools/jb2cmp/minidjvu.h ../djvulibre/tools/jb2cmp/patterns.h ../djvulibre/tools/jb2cmp/classify.h
+frames.o: ../djvulibre/tools/jb2cmp/frames.cpp ../djvulibre/tools/jb2cmp/mdjvucfg.h ../djvulibre/tools/jb2cmp/minidjvu.h ../djvulibre/tools/jb2cmp/patterns.h ../djvulibre/tools/jb2cmp/classify.h
+patterns.o: ../djvulibre/tools/jb2cmp/patterns.cpp ../djvulibre/tools/jb2cmp/mdjvucfg.h ../djvulibre/tools/jb2cmp/minidjvu.h ../djvulibre/tools/jb2cmp/patterns.h ../djvulibre/tools/jb2cmp/classify.h
