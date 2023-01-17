@@ -33,7 +33,7 @@ You need `g++` version supports `c++0x` standard flag.
 ## Usage
 
 ```shell
-simpledjvu [options] input.pnm output.djvu
+mfbdjvu [options] input.pnm output.djvu
 ```
 
 where options =
@@ -58,7 +58,7 @@ where options =
 
 **-contrast n** {0} Auxiliary regulator DjVuL in percent (sharpen).
 
-**-fbs n** {100} and **-delta n** {0} Additional regulation DjVuL of BG/FG according to the linear law: FG * fgs + delta != BG
+**-fbs n** {100} and **-delta n** {0} Additional regulation DjVuL of BG/FG according to the linear law: FG * fbs + delta != BG
 
 **-black** Using black BG as the base, not white.
 
