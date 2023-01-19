@@ -38,6 +38,8 @@ mfbdjvu [options] input.pnm output.djvu
 
 where options =
 
+**-mask mask.pbm** {NULL} exist mask file.
+
 **-dpi n** {300} DPI output djvu.
 
 **-loss n** {1} Use *n* as cjb2 loss level (see djvulibre cjb2 tool description).
