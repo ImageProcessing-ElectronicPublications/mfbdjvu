@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Исходные файлы\jb2cmp">
+      <UniqueIdentifier>{1d9a3bef-e3a3-45e1-914f-71424bcf5666}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\libdjvu">
+      <UniqueIdentifier>{15071a47-43f5-448f-936d-b847e82a35cb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\jb2tune.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\mfbdjvu.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\pgm2jb2.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\tools\jb2cmp\classify.cpp">
+      <Filter>Исходные файлы\jb2cmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\tools\jb2cmp\cuts.cpp">
+      <Filter>Исходные файлы\jb2cmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\tools\jb2cmp\frames.cpp">
+      <Filter>Исходные файлы\jb2cmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\tools\jb2cmp\patterns.cpp">
+      <Filter>Исходные файлы\jb2cmp</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\JB2Image.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GSmartPointer.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GBitmap.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\ByteStream.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GContainer.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVuMessageLite.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GString.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GThreads.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\Arrays.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GException.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVuMessage.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GURL.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\XMLParser.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\XMLTags.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GUnicode.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GOS.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GRect.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\ZPCodec.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GPixmap.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVuText.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\IFFByteStream.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\BSByteStream.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GMapAreas.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVuFile.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\IW44Image.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVuNavDir.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DataPool.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVuInfo.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVuPort.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVuDocument.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVmNav.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVmDoc.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVmDir.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVuImage.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVuFileCache.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVmDir0.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVuPalette.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\DjVuAnno.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\GScaler.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\MMX.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\UnicodeByteStream.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\JB2EncodeCodec.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\MMRDecoder.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\BSEncodeByteStream.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\libdjvu\IW44EncodeCodec.cpp">
+      <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
