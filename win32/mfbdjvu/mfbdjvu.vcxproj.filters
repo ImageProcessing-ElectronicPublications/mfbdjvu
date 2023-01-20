@@ -21,9 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\jb2tune.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\src\mfbdjvu.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -176,6 +173,9 @@
     </ClCompile>
     <ClCompile Include="..\..\src\djvulibre\libdjvu\IW44EncodeCodec.cpp">
       <Filter>Исходные файлы\libdjvu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\src\djvulibre\tools\jb2tune.cpp">
+      <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

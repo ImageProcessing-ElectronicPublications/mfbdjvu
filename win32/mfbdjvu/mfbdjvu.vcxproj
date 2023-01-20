@@ -255,7 +255,7 @@
     <ClCompile Include="..\..\src\djvulibre\tools\jb2cmp\cuts.cpp" />
     <ClCompile Include="..\..\src\djvulibre\tools\jb2cmp\frames.cpp" />
     <ClCompile Include="..\..\src\djvulibre\tools\jb2cmp\patterns.cpp" />
-    <ClCompile Include="..\..\src\jb2tune.cpp" />
+    <ClCompile Include="..\..\src\djvulibre\tools\jb2tune.cpp" />
     <ClCompile Include="..\..\src\mfbdjvu.cpp" />
     <ClCompile Include="..\..\src\pgm2jb2.cpp" />
   </ItemGroup>
