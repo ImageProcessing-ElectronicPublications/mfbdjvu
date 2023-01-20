@@ -18,7 +18,7 @@ DJVULIBRE_PATH = src/djvulibre
 CXX = g++ -O3 -std=c++0x
 INCLUDES = -I$(DJVULIBRE_PATH) -I$(DJVULIBRE_PATH)/libdjvu -I$(DJVULIBRE_PATH)/tools -Isrc
 CXXFLAGS = $(INCLUDES) -DHAVE_CONFIG_H -pthread -DTHREADMODEL=POSIXTHREADS
-LDFLAGS = -ldjvulibre
+LDFLAGS = -ldjvulibre -lm
 LN = $(CXX) -DHAVE_CONFIG_H
 RM = rm -f
 

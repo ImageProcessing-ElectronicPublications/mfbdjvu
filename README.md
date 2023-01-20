@@ -44,9 +44,11 @@ where options =
 
 **-loss n** {1} Use *n* as cjb2 loss level (see djvulibre cjb2 tool description).
 
-**-slices_bg n1,n2,...** {74,89,89}. Use *n1,n2,...* as number of slices for c44 for background (see djvulibre c44 tool description).
+**-quality n** {75} Use *n* as parameter {0 - 100} for generate slices, see down.
 
-**-slices_fg n1,n2,...** {89} Use *n1,n2,...* as number of slices for c44 for foreground.
+**-slices_bg n1,n2,...** {92,100,113}. Use *n1,n2,...* as number of slices for c44 for background (see djvulibre c44 tool description) {== -quality 75}.
+
+**-slices_fg n1,n2,...** {113} Use *n1,n2,...* as number of slices for c44 for foreground {== -quality 75}.
 
 **-levels n**  {0} Level DjVuL block, 0 - auto.
 

@@ -1,5 +1,5 @@
 /*
- * MFBdjvu-1.1
+ * MFBdjvu-1.3
  * Based on simpledjvu, djvul and djvulibre (http://djvu.sourceforge.net/)
  *
  */
@@ -9,6 +9,7 @@
 #include <vector>
 #include <array>
 #include <string>
+#include <cmath>
 #include <djvulibre.h>
 #include <pgm2jb2.h>
 #define DJVUL_IMPLEMENTATION
@@ -22,6 +23,7 @@ struct Keys
 {
     int dpi;
     int loss;
+    float quality;
     int levels;
     int bgs;
     int fgs;
@@ -37,6 +39,7 @@ struct Keys
     Keys():
         dpi(300),
         loss(1),
+        quality(75),
         levels(0),
         bgs(3),
         fgs(2),
@@ -46,8 +49,8 @@ struct Keys
         contrast(0.0f),
         fbs(1.0f),
         delta(0.0f),
-        slices_bg({74, 89, 99}),
-        slices_fg({89}),
+        slices_bg({92,100,113}),
+        slices_fg({113}),
         mask(NULL)
     {
     }
@@ -92,8 +95,9 @@ void print_help()
             << "\t-mask mask.pbm\n"
             << "\t-dpi n {300}\n"
             << "\t-loss n {1}\n"
-            << "\t-slices_bg n1,n2,.. {74,89,89}\n"
-            << "\t-slices_fg n1,n2,...{89}\n"
+            << "\t-quality n {75}\n"
+            << "\t-slices_bg n1,n2,.. {92,100,113}\n"
+            << "\t-slices_fg n1,n2,...{113}\n"
             << "\t-levels n {0}\n"
             << "\t-bgs n {3}\n"
             << "\t-fgs n {2}\n"
@@ -127,7 +131,7 @@ bool parse_keys(int argc, char *argv[], Keys *keys, char **input, char **output)
         {
             keys->wbmode = -1;
         }
-        else if (arg == "-dpi" || arg == "-loss" || arg == "-levels" || arg == "-bgs" || arg == "-fgs" || arg == "-overlay" || arg == "-anisotropic" || arg == "-contrast" || arg == "-fbs" || arg == "-delta")
+        else if (arg == "-dpi" || arg == "-loss" || arg == "-quality" || arg == "-levels" || arg == "-bgs" || arg == "-fgs" || arg == "-overlay" || arg == "-anisotropic" || arg == "-contrast" || arg == "-fbs" || arg == "-delta")
         {
             ++i;
             int n;
@@ -145,6 +149,18 @@ bool parse_keys(int argc, char *argv[], Keys *keys, char **input, char **output)
             else if (arg == "-loss")
             {
                 keys->loss = n;
+            }
+            else if (arg == "-quality")
+            {
+                n = (n < 0) ? 0 : (n < 100) ? n : 100;
+                keys->quality = sqrt(n) * 0.1f;
+                vector<int> nf, nb;
+                nb.push_back((int)(keys->quality * 100.5f) + 5);
+                nb.push_back((int)(keys->quality * 110.5f) + 5);
+                nb.push_back((int)(keys->quality * 125.5f) + 5);
+                keys->slices_bg = nb;
+                nf.push_back((int)(keys->quality * 125.5f) + 5);
+                keys->slices_fg = nf;
             }
             else if (arg == "-levels")
             {
