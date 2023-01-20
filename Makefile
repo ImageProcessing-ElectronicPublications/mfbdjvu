@@ -22,7 +22,14 @@ LDFLAGS = -ldjvulibre
 LN = $(CXX) -DHAVE_CONFIG_H
 RM = rm -f
 
-OBJ_FILES = src/mfbdjvu.o src/pgm2jb2.o src/jb2tune.o src/jb2cmp/libjb2cmp.a
+OBJ_FILES = \
+            src/pgm2jb2.o \
+            src/djvulibre/tools/jb2tune.o \
+            src/djvulibre/tools/jb2cmp/classify.o \
+            src/djvulibre/tools/jb2cmp/cuts.o \
+            src/djvulibre/tools/jb2cmp/frames.o \
+            src/djvulibre/tools/jb2cmp/patterns.o \
+            src/mfbdjvu.o
 BIN_FILES = $(PROJECT)
 
 all: djvulibre_config $(BIN_FILES)
@@ -32,9 +39,6 @@ $(PROJECT): $(OBJ_FILES)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
-
-src/jb2cmp/libjb2cmp.a: 
-	cd src/jb2cmp && ${MAKE}
 
 djvulibre_config:
 	cd src/djvulibre && ./autogen.sh
