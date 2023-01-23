@@ -1,5 +1,5 @@
 /*
- * MFBdjvu-1.3
+ * MFBdjvu-1.4
  * Based on simpledjvu, djvul and djvulibre (http://djvu.sourceforge.net/)
  *
  */
@@ -39,7 +39,7 @@ struct Keys
     Keys():
         dpi(300),
         loss(1),
-        quality(75),
+        quality(0.75f),
         levels(0),
         bgs(3),
         fgs(2),
@@ -49,8 +49,8 @@ struct Keys
         contrast(0.0f),
         fbs(1.0f),
         delta(0.0f),
-        slices_bg({92,100,113}),
-        slices_fg({113}),
+        slices_bg({74,84,88,97}),
+        slices_fg({100}),
         mask(NULL)
     {
     }
@@ -96,8 +96,8 @@ void print_help()
             << "\t-dpi n {300}\n"
             << "\t-loss n {1}\n"
             << "\t-quality n {75}\n"
-            << "\t-slices_bg n1,n2,.. {92,100,113}\n"
-            << "\t-slices_fg n1,n2,...{113}\n"
+            << "\t-slices_bg n1,n2,.. {74,84,88,97}\n"
+            << "\t-slices_fg n1,n2,...{100}\n"
             << "\t-levels n {0}\n"
             << "\t-bgs n {3}\n"
             << "\t-fgs n {2}\n"
@@ -152,14 +152,16 @@ bool parse_keys(int argc, char *argv[], Keys *keys, char **input, char **output)
             }
             else if (arg == "-quality")
             {
-                n = (n < 0) ? 0 : (n < 100) ? n : 100;
-                keys->quality = sqrt(n) * 0.1f;
+                n = (n < 0) ? 0 : n;
+                keys->quality = (float)n * 0.01f;
+                float lq = log10(1.0f + keys->quality * 12.0f); // == 1.0 for quality 75
                 vector<int> nf, nb;
-                nb.push_back((int)(keys->quality * 100.5f) + 5);
-                nb.push_back((int)(keys->quality * 110.5f) + 5);
-                nb.push_back((int)(keys->quality * 125.5f) + 5);
+                nb.push_back((int)(lq * 57.0f + 0.5f) + 17);
+                nb.push_back((int)(lq * 66.0f + 0.5f) + 18);
+                nb.push_back((int)(lq * 69.0f + 0.5f) + 19);
+                nb.push_back((int)(lq * 77.0f + 0.5f) + 20);
                 keys->slices_bg = nb;
-                nf.push_back((int)(keys->quality * 125.5f) + 5);
+                nf.push_back((int)(lq * 80.0f + 0.5f) + 20);
                 keys->slices_fg = nf;
             }
             else if (arg == "-levels")
