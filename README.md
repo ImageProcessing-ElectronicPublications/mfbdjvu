@@ -6,6 +6,8 @@ The breakdown of the image into components is done using [DjVuL](https://github.
 
 MFBdjvu based of [simpledjvu](https://github.com/mihaild/simpledjvu).
 
+See [MFBdjvu demo](https://github.com/ImageProcessing-ElectronicPublications/mfbdjvu-demo)
+
 ## Install
 
 ### load submodules
