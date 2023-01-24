@@ -1,5 +1,5 @@
 /*
- * MFBdjvu-0.1
+ * MFBdjvu-1.5
  *
  * depends DjVuLibre
  *

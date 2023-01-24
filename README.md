@@ -47,7 +47,7 @@ where options =
 
 **-loss n** {1} Use *n* as cjb2 loss level (see djvulibre cjb2 tool description).
 
-**-quality n** {75} Use *n* as parameter {0 - 100} for generate slices, see down.
+**-quality n** {75} Use *n* as parameter {0 - Inf} for generate slices, see down.
 
 **-slices_bg n1,n2,...** {74,84,88,97}. Use *n1,n2,...* as number of slices for c44 for background (see djvulibre c44 tool description) {== -quality 75}.
 

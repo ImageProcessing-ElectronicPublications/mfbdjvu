@@ -1,5 +1,5 @@
 /*
- * MFBdjvu-1.4
+ * MFBdjvu-1.5
  * Based on simpledjvu, djvul and djvulibre (http://djvu.sourceforge.net/)
  *
  */
