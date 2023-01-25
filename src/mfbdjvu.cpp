@@ -1,8 +1,10 @@
 /*
- * MFBdjvu-1.5
+ * MFBdjvu-1.6
  * Based on simpledjvu, djvul and djvulibre (http://djvu.sourceforge.net/)
  *
  */
+
+#define MFBDJVU_VERSION "1.6"
 
 #include <iostream>
 #include <cstdlib>
@@ -90,6 +92,7 @@ GP<GBitmap> make_chunk_mask(const GBitmap &mask, Chunk chunk)
 void print_help()
 {
     std::cerr
+            << "MFB DjVu version " << MFBDJVU_VERSION << "\n"
             << "Usage: mfbdjvu [options] input.pnm output.djvu\n"
             << "where options =\n"
             << "\t-mask mask.pbm\n"

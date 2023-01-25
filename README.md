@@ -80,3 +80,14 @@ The result of this algorithm, due to the indicated shortcomings and the absence 
 After careful study, all the foundations of the specified algorithm were rejected.
 The new algorithm is based on levels instead of recursion, a smooth weight function is used instead of a "discontinuous" one, no color restriction, BG/FG selection controls are enabled.
 The new algorithm allowed not only to obtain a much more adequate result, but also gave derivative functions: image division into BG/FG according to the existing mask.
+
+## Links
+
+* [djvulibre](http://djvu.sourceforge.net/)
+* [simpledjvu](https://github.com/mihaild/simpledjvu)
+* [depress](https://github.com/plzombie/depress)
+* [stb-image-djvul](https://github.com/ImageProcessing-ElectronicPublications/stb-image-djvul)
+* [tesseract](https://github.com/tesseract-ocr/tesseract)
+* [hocr-tools](https://github.com/ocropus/hocr-tools)
+* [imthreshold](https://github.com/ImageProcessing-ElectronicPublications/imthreshold)
+* [aithreshold](https://github.com/ImageProcessing-ElectronicPublications/aithreshold)
