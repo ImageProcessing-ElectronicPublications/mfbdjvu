@@ -53,6 +53,8 @@ where options =
 
 **-slices_fg n1,n2,...** {100} Use *n1,n2,...* as number of slices for c44 for foreground {== -quality 75}.
 
+**-threshold str**  {djvul} threshold: djvul, bimod, sauvola, blur
+
 **-levels n**  {0} Level DjVuL block, 0 - auto.
 
 **-bgs n** {3} Background and Foreground downsample.
@@ -66,6 +68,8 @@ where options =
 **-contrast n** {0} Auxiliary regulator DjVuL in percent (sharpen).
 
 **-fbs n** {100} and **-delta n** {0} Additional regulation DjVuL of BG/FG according to the linear law: FG * fbs + delta != BG
+
+**-sensitivity n** {20} Sensitivity regulation for Sauvola and Blur threshold
 
 **-black** Using black BG as the base, not white.
 

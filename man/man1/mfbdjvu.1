@@ -1,4 +1,4 @@
-.TH "MFBdjuu" 1 1.5 "24 Jan 2023" "User Manual"
+.TH "MFBdjuu" 1 2.0 "26 Jan 2023" "User Manual"
 
 .SH NAME
 mfbdjvu
@@ -33,6 +33,9 @@ mfbdjvu [options] input.pnm output.djvu
 -slices_fg n1,n2,...
 {100} Use n1,n2,... as number of slices for c44 for foreground {== -quality 75}.
 .TP
+--threshold str
+{djvul} threshold: djvul, bimod, sauvola, blur
+.TP
 -levels n
 {0} Level DjVuL block, 0 - auto.
 .TP
@@ -56,6 +59,9 @@ mfbdjvu [options] input.pnm output.djvu
 .TP
 -delta n
 {0} Additional regulation DjVuL of BG/FG according to the linear law: FG * fbs + delta != BG
+.TP
+-sensitivity n
+{20} Sensitivity regulation for Sauvola and Blur threshold
 .TP
 -black
 Using black BG as the base, not white.

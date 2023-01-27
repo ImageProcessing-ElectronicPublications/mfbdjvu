@@ -4,7 +4,7 @@
  *
  */
 
-#define MFBDJVU_VERSION "1.6"
+#define MFBDJVU_VERSION "2.0"
 
 #include <iostream>
 #include <cstdlib>
@@ -15,7 +15,9 @@
 #include <djvulibre.h>
 #include <pgm2jb2.h>
 #define DJVUL_IMPLEMENTATION
+#define THRESHOLD_IMPLEMENTATION
 #include "djvul.h"
+#include "threshold.h"
 
 using std::vector;
 using std::array;
@@ -30,11 +32,13 @@ struct Keys
     int bgs;
     int fgs;
     int wbmode;
+    int threshold;
     float overlay;
     float anisotropic;
     float contrast;
     float fbs;
     float delta;
+    float sensitivity;
     vector<int> slices_bg;
     vector<int> slices_fg;
     char *mask;
@@ -46,11 +50,13 @@ struct Keys
         bgs(3),
         fgs(2),
         wbmode(1),
+        threshold(TDJVUL),
         overlay(0.5f),
         anisotropic(0.0f),
         contrast(0.0f),
         fbs(1.0f),
         delta(0.0f),
+        sensitivity(0.2f),
         slices_bg({74,84,88,97}),
         slices_fg({100}),
         mask(NULL)
@@ -101,6 +107,7 @@ void print_help()
             << "\t-quality n {75}\n"
             << "\t-slices_bg n1,n2,.. {74,84,88,97}\n"
             << "\t-slices_fg n1,n2,...{100}\n"
+            << "\t-threshold str {djvul}\n"
             << "\t-levels n {0}\n"
             << "\t-bgs n {3}\n"
             << "\t-fgs n {2}\n"
@@ -109,6 +116,7 @@ void print_help()
             << "\t-contrast n {0}\n"
             << "\t-fbs n {100}\n"
             << "\t-delta n {0}\n"
+            << "\t-sensitivity n {20}\n"
             << "\t-black\n"
             ;
 }
@@ -134,7 +142,7 @@ bool parse_keys(int argc, char *argv[], Keys *keys, char **input, char **output)
         {
             keys->wbmode = -1;
         }
-        else if (arg == "-dpi" || arg == "-loss" || arg == "-quality" || arg == "-levels" || arg == "-bgs" || arg == "-fgs" || arg == "-overlay" || arg == "-anisotropic" || arg == "-contrast" || arg == "-fbs" || arg == "-delta")
+        else if (arg == "-dpi" || arg == "-loss" || arg == "-quality" || arg == "-levels" || arg == "-bgs" || arg == "-fgs" || arg == "-overlay" || arg == "-anisotropic" || arg == "-contrast" || arg == "-fbs" || arg == "-delta" || arg == "-sensitivity")
         {
             ++i;
             int n;
@@ -199,6 +207,10 @@ bool parse_keys(int argc, char *argv[], Keys *keys, char **input, char **output)
             {
                 keys->delta = (float)n;
             }
+            else if (arg == "-sensitivity")
+            {
+                keys->sensitivity = (float)n * 0.01f;
+            }
         }
         else if (arg == "-slices_bg" || arg == "-slices_fg")
         {
@@ -224,6 +236,17 @@ bool parse_keys(int argc, char *argv[], Keys *keys, char **input, char **output)
             {
                 keys->slices_fg = ns;
             }
+        }
+        else if (arg == "-threshold")
+        {
+            ++i;
+            char *nptr = argv[i];
+            if (strcmp(nptr, "bimod") == 0)
+                keys->threshold = TBIMOD;
+            else if (strcmp(nptr, "sauvola") == 0)
+                keys->threshold = TSAUVOLA;
+            else if (strcmp(nptr, "blur") == 0)
+                keys->threshold = TBLUR;
         }
         else if (arg == "-mask")
         {
@@ -453,7 +476,7 @@ int main(int argc, char *argv[])
     }
     else
     {
-        if(!(keys.levels = ImageDjvulThreshold(data, mask_data, bg_data, fg_data, width, height, channels, keys.bgs, keys.levels, keys.wbmode, keys.overlay, keys.anisotropic, keys.contrast, keys.fbs, keys.delta)))
+        if(!(keys.levels = ImageDjvulSelect(data, mask_data, bg_data, fg_data, width, height, channels, keys.bgs, keys.levels, keys.wbmode, keys.overlay, keys.anisotropic, keys.contrast, keys.fbs, keys.delta,(float)(keys.bgs * keys.fgs), keys.sensitivity, keys.threshold)))
         {
             fprintf(stderr, "ERROR: not complite DjVuL\n");
             return 3;
