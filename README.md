@@ -53,7 +53,7 @@ where options =
 
 **-slices_fg n1,n2,...** {100} Use *n1,n2,...* as number of slices for c44 for foreground {== -quality 75}.
 
-**-threshold str**  {djvul} threshold: djvul, bimod, sauvola, blur
+**-threshold str**  {djvul} threshold: djvul, bimod, sauvola, blur, edgeplus
 
 **-levels n**  {0} Level DjVuL block, 0 - auto.
 
@@ -95,3 +95,4 @@ The new algorithm allowed not only to obtain a much more adequate result, but al
 * [hocr-tools](https://github.com/ocropus/hocr-tools)
 * [imthreshold](https://github.com/ImageProcessing-ElectronicPublications/imthreshold)
 * [aithreshold](https://github.com/ImageProcessing-ElectronicPublications/aithreshold)
+* [EdgePlus](https://github.com/ScanTailor-Advanced/scantailor-advanced/pull/48)

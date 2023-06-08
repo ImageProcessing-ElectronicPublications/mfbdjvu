@@ -1,10 +1,10 @@
 /*
- * MFBdjvu-1.6
+ * MFBdjvu
  * Based on simpledjvu, djvul and djvulibre (http://djvu.sourceforge.net/)
  *
  */
 
-#define MFBDJVU_VERSION "2.0"
+#define MFBDJVU_VERSION "2.1"
 
 #include <iostream>
 #include <cstdlib>
@@ -107,7 +107,7 @@ void print_help()
             << "\t-quality n {75}\n"
             << "\t-slices_bg n1,n2,.. {74,84,88,97}\n"
             << "\t-slices_fg n1,n2,...{100}\n"
-            << "\t-threshold str {djvul}\n"
+            << "\t-threshold str {djvul}: djvul, bimod, sauvola, blur, edgeplus\n"
             << "\t-levels n {0}\n"
             << "\t-bgs n {3}\n"
             << "\t-fgs n {2}\n"
@@ -247,6 +247,8 @@ bool parse_keys(int argc, char *argv[], Keys *keys, char **input, char **output)
                 keys->threshold = TSAUVOLA;
             else if (strcmp(nptr, "blur") == 0)
                 keys->threshold = TBLUR;
+            else if (strcmp(nptr, "edgeplus") == 0)
+                keys->threshold = TEDGEPLUS;
         }
         else if (arg == "-mask")
         {

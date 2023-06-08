@@ -1,4 +1,4 @@
-#MFBdjvu-1.0
+#MFBdjvu
 #
 #Based on djvulibre (http://djvu.sourceforge.net/)
 #Based on monday2000 (http://djvu-soft.narod.ru/)
